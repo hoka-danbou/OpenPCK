@@ -1,0 +1,87 @@
+body {
+    background: #EFFFFF;
+}
+
+h1 {
+    margin: 0;
+    border-bottom: 3px solid #88F;
+}
+
+#login_form td {
+	text-align: center;
+	padding: 7px 0px;
+}
+
+#login_btn {
+	width: 200px;
+}
+
+pre {
+    font-family: monospace;
+}
+
+textarea {
+    width: 100%;
+    height: 30%;
+}
+
+object.pdf {
+    width: 100%;
+    height: 80%;
+
+}
+
+header {
+    height: 40px;
+}
+header h1 {
+    color: #000;
+}
+
+#menu li {
+    list-style: none;
+    float: left;
+}
+#menu {
+    margin: 10px 0px;
+}
+
+footer {
+    background-color: #88f;
+    text-align: center;
+    color: #eee;
+}
+
+#userinfo {
+    float: right;
+    padding: 10px;
+    width: 200px;
+    margin-top: -40px;
+
+}
+
+.clear {
+    clear: both;
+}
+
+#contents {
+    padding: 10px;
+}
+
+.bc li {
+    list-style: none;
+    float: left;
+    margin-right: 5px;
+}
+.bc {
+    margin: 0;
+    padding: 0;
+}
+.status_icon {
+	height: 20px;
+	margin-right: 3px;
+}
+
+form div {
+    display: block;
+}
