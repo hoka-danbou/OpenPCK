@@ -8,14 +8,12 @@ abstract class Compiler
 class CompilerC extends Compiler
 {
     public function compile($filename) {
-        $this->err = '';
-
         $outfilename = dirname($filename) . '/output';
         $ret = [];
         exec('gcc ' . $filename . ' -o ' . $outfilename . ' 2>&1', $ret);
 
         $this->err = trim(implode("\n", $ret));
-        $this->err = str_replace($filename.':', '', $this->err);
+        $this->err .= str_replace($filename.':', '', $this->err);
 
         return $outfilename;
     }

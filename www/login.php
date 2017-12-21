@@ -12,7 +12,7 @@ if($is_auth) {
     if($config['auth_type'] == 'file') {
         $login_ok = $user->auth_from_text('../userdata/passwd.txt');
     }else{
-        $login_ok = $user->auth_from_ldap();
+        $login_ok = $user->auth_from_ldap($config['ldap_host'], $config['ldap_domain_name']);
     }
     if($login_ok) {
         $_SESSION['userid'] = $_POST['userid'];

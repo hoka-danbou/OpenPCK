@@ -10,6 +10,16 @@ function redirect_to($page) {
     header('Location: '.$page);
 }
 
+//インストール時の書き込み権限等のチェック
+function install_check() {
+    $msgs = [];
+    if(! is_writable($config['data_dir'])) {
+        $msgs[] = 'userdataディレクトリに書き込み権限がありません';
+    }
+
+    return $msgs;
+}
+
 function make_query_string($cource_num, $quiz_num = -1) {
     $ret = '?c='.$cource_num;
     if($quiz_num >= 0) {

@@ -34,7 +34,7 @@ class QuizLoader
 
     public function getCourseName($course_num, $with_num = true) {
 		$couses      = $this->getCourses();
-        $course_name = array_shift(preg_grep('/'.$course_num . '_/', $couses));
+        $course_name = preg_grep('/'.$course_num . '_/', $couses)[0];
         if(!$with_num) {
             $course_name = substr($course_name, 3);
         }
@@ -43,7 +43,8 @@ class QuizLoader
 
     public function getQuizName($course_num, $quiz_num, $with_num = true) {
         $quizzes   = $this->getQuizList($course_num);
-        $quiz_name = array_pop(preg_grep('/'.$quiz_num . '_/', $quizzes));
+        $quiz_name = preg_grep('/'.$quiz_num . '_/', $quizzes);
+        $quiz_name = array_pop($quiz_name);
 
         if(!$with_num) {
             $quiz_name = substr($quiz_name, 3);

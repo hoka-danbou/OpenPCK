@@ -30,12 +30,11 @@ class User
         return false;
     }
 
-    public function auth_from_ldap() {
-        $ldaphost = $config['ldap_host'];
+    public function auth_from_ldap($ldaphost, $ldap_domain_name) {
         $ldapport = 389;
         $ldapconn = ldap_connect($ldaphost, $ldapport) or die('Unabled to connect to the server');
         if($ldapconn){
-            $ldapbind = @ldap_bind($ldapconn, $this->userid . '@' . $config['ldap_domain_name'] , $this->password);
+            $ldapbind = ldap_bind($ldapconn, $this->userid . '@' . $ldap_domain_name , $this->password);
             if($ldapbind){
                 if(!file_exists($this->base_dir.'/'.$this->userid)) {
                     $this->createUserDir();

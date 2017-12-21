@@ -1,7 +1,7 @@
 <?php
 require_once('../lib/init.php');
-$course_num = $_GET['c'];
-$quiz_num   = $_GET['n'];
+$course_num = intval($_GET['c']);
+$quiz_num   = intval($_GET['n']);
 
 $ql = new QuizLoader();
 

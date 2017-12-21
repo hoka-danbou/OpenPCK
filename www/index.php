@@ -19,12 +19,9 @@ function make_questions_table() {
             $status_text = make_progress_bar($summary['ok'] , $total, $summary['ok'].'/'.$total);
         }
             
-        $html .= '<tr>'
-               . '<td><a href="./quiz_list.php?c='.$num.'">'.$course.'</a></td>'
-               . '<td>'
-               . $status_text
-               .'</td>'
-               . '</tr>';
+        $html .= '<a href="./quiz_list.php?c='.$num.'">'
+               . '<h3>'.$course.'</h3><br>'
+               . $status_text.'</a></td>';
     }
     return $html;
 }
@@ -37,17 +34,9 @@ function make_questions_table() {
 <body>
 <?php include('../tpl/html-header.php'); ?>
 
-<table id="questions" class="table table-striped">
-    <thead>
-        <tr>
-            <th>コース</th>
-            <th>回答状況</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php echo make_questions_table(); ?>
-    </tbody>
-
-</table>
+<div class="list-group">
+<h2>コース一覧</h2>
+<?php echo make_questions_table(); ?>
+</div>
 
 <?php include('../tpl/html-footer.php'); ?>

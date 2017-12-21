@@ -4,7 +4,7 @@
  */
 class StatusManager
 {
-    public $base_dir = '../userdata';
+    public $base_dir = __DIR__ . '/../userdata';
     public $data_dir = '';
     public $username = '';
     public $course_num = -1;

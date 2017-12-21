@@ -22,7 +22,7 @@ function make_quizzes_table() {
 
 
         $html .= '<tr>'
-               . '<td>'.$num.'</td>'
+               . '<td style="width:5em">'.$num.'</td>'
                . '<td><a href="./detail.php?c='.$course_num.'&n='.$num.'">'.$name.'</a></td>'
                . '<td>'.$status_icon.$status_msg.'</td>'
                . '</tr>';
