@@ -16,8 +16,8 @@ class User
             if(trim($line) == '') continue;
 
             $fields = explode(' ', $line);
-            if($this->userid == $fields[0]) {
-                if($this->password == $fields[1]) {
+            if($this->userid == trim($fields[0])) {
+                if($this->password == trim($fields[1])) {
                     if(!file_exists($this->base_dir.'/'.$this->userid)) {
                         $this->createUserDir();
                     }
